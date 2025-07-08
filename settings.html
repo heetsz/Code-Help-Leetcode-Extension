@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+      <style>
+            html, body {
+                  height: 100%;
+                  width: 100vw;
+                  min-height: 100vh;
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+            }
+            body {
+                  background: #f7f8fa;
+                  font-family: 'Inter', Arial, sans-serif;
+                  color: #262626;
+                  margin: 0;
+                  padding: 0;
+                  min-height: 400px;
+                  min-width: 360px;
+                  height: 100vh;
+                  width: 100vw;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  justify-content: center;
+                  box-sizing: border-box;
+            }
+            .container {
+                  background: #fff;
+                  border-radius: 12px;
+                  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+                  padding: 32px 36px 28px 36px;
+                  min-width: 340px;
+                  min-height: 340px;
+                  width: 360px;
+                  max-width: 95vw;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 18px;
+                  box-sizing: border-box;
+            }
+            label {
+                  font-size: 15px;
+                  font-weight: 600;
+                  margin-bottom: 6px;
+                  color: #262626;
+                  letter-spacing: 0.01em;
+            }
+            input[type="text"], select {
+                  width: 100%;
+                  padding: 10px 12px;
+                  border: 1px solid #d1d5db;
+                  border-radius: 6px;
+                  font-size: 15px;
+                  background: #f7f8fa;
+                  transition: border 0.2s;
+                  margin-bottom: 2px;
+            }
+            input[type="text"]:focus, select:focus {
+                  border: 1.5px solid #a0a3a7;
+                  outline: none;
+                  background: #fff;
+            }
+            button[type="submit"] {
+                  background: linear-gradient(90deg, #4f8cff 0%, #2355e6 100%);
+                  color: #fff;
+                  border: none;
+                  border-radius: 6px;
+                  padding: 12px 0;
+                  font-size: 16px;
+                  font-weight: 600;
+                  cursor: pointer;
+                  margin-top: 10px;
+                  transition: background 0.2s;
+                  box-shadow: 0 2px 8px rgba(79,140,255,0.08);
+            }
+            button[type="submit"]:hover {
+                  background: linear-gradient(90deg, #2355e6 0%, #4f8cff 100%);
+            }
+            #msg {
+                  margin-top: 8px;
+                  font-size: 14px;
+                  color: #27ae60;
+                  background: #eafaf1;
+                  border-radius: 4px;
+                  padding: 6px 10px;
+                  display: none;
+            }
+            #popup {
+                  display: inline-block;
+                  margin-top: 18px;
+                  color: #4f8cff;
+                  font-weight: 600;
+                  text-decoration: none;
+                  font-size: 15px;
+                  transition: color 0.2s;
+            }
+            #popup:hover {
+                  color: #2355e6;
+                  text-decoration: underline;
+            }
+      </style>
+</head>
+<body>
+      <div class="container">
+            <div>
+                  <label for="language">Programming Language:</label>
+                  <input type="text" id="language" >
+            </div>
+            <div>
+                  <label for="responselanguage">Response Language:</label>
+                  <input type="text" id="response-language" name="responseLanguage" >
+            </div>
+            <div>
+                  <label for="showComplexity">Show Time & Space Complexity:</label>
+                  <select id="show-complexity" name="showComplexity">
+                        <option value="on">On</option>
+                        <option value="off">Off</option>
+                  </select>
+            </div>
+            <div>
+                  <label for="responseType">Response Type:</label>
+                  <select id="response-type" name="responseType">
+                        <option value="brief">Brief</option>
+                        <option value="toThePoint">To the Point</option>
+                  </select>
+            </div>
+            <button type="submit">Save Settings</button>
+            <p id="msg"> message </p>
+            <a id="popup" href="popup.html">home</a>
+      </div>
+      <script src="settings.js"></script>
+</body>
+</html>

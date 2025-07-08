@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>API Settings</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter:400,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #18181a;
+      --panel: #232329;
+      --border: #2c2c36;
+      --primary: #f5ba50;
+      --text: #f3f3f7;
+      --text-secondary: #b3b3c2;
+      --input-bg: #232329;
+      --input-border: #39394a;
+      --input-focus: #f5ba50;
+      --button-bg: #232329;
+      --button-hover: #39394a;
+      --danger: #ff4d4f;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', Arial, sans-serif;
+      min-height: 100vh;
+      width: 150vw;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 0;
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+    }
+    .container {
+      background: var(--panel);
+      border-radius: 12px;
+      box-shadow: 0 2px 16px 0 #00000040;
+      border: 1px solid var(--border);
+      margin-top: 48px;
+      padding: 32px 32px 24px 32px;
+      min-width: 340px;
+      max-width: 95vw;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 24px;
+      min-height: 400px;
+      box-sizing: border-box;
+    }
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+    label {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--input-border);
+      background: var(--input-bg);
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 12px;
+      transition: border 0.2s;
+      outline: none;
+    }
+    input[type="text"]:focus {
+      border: 1.5px solid var(--input-focus);
+      background: #232329;
+    }
+    .button-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    button {
+      background: var(--button-bg);
+      color: var(--primary);
+      border: 1px solid var(--input-border);
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, border 0.2s;
+      outline: none;
+    }
+    button:hover, button:focus {
+      background: var(--button-hover);
+      border: 1.5px solid var(--primary);
+    }
+    #delete-api-button {
+      color: var(--danger);
+      border-color: var(--danger);
+      background: transparent;
+    }
+    #delete-api-button:hover, #delete-api-button:focus {
+      background: #2c1a1a;
+      border-color: var(--danger);
+    }
+    #api-status, #api-action {
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.98rem;
+      margin-bottom: 0;
+      background: #232329;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+      text-align: center;
+      display: none;
+    }
+    #api-status.error, #api-action.error {
+      color: var(--danger);
+      border-color: var(--danger);
+    }
+    .api-link {
+      color: var(--primary);
+      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .api-link:hover {
+      color: #ffd580;
+    }
+    #popup {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--primary);
+      font-size: 1rem;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--primary);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+    }
+    #popup:hover {
+      color: #ffd580;
+    }
+    .api-info {
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+      margin-top: 18px;
+      text-align: center;
+    }
+    @media (max-width: 480px) {
+      .container {
+        padding: 18px 6vw 16px 6vw;
+        min-width: unset;
+        min-height: 340px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h3>LeetCode Helper API</h3>
+
+    <p id="api-status"></p>
+    
+    <div id="api-settings">
+      <label for="api">API</label>
+      <input type="text" id="api" name="api" autocomplete="off">
+      <div class="button-row">
+        <button id="save-button">Save</button>
+        <button id="add-api-button">Add New API</button>
+        <button id="delete-api-button">Delete API</button>
+      </div>
+    </div>
+
+    <p id="api-action"></p>
+
+    <a id="popup" href="popup.html">Home</a>
+
+    <div class="api-info">
+      You can get an API key from 
+      <a class="api-link" href="https://makersuite.google.com/app/apikey" target="_blank">
+        Google AI Studio
+      </a>
+    </div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

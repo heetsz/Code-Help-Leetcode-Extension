@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>popup</title>
+      <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700&display=swap" rel="stylesheet">
+      <style>
+        body {
+          background: #f5f6fa;
+          font-family: 'Inter', Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          min-width: 340px;
+        }
+        #chatbot-container {
+          background: #fff;
+          border-radius: 12px;
+          box-shadow: 0 2px 16px rgba(60,72,88,0.10);
+          margin: 24px auto 16px auto;
+          max-width: 340px;
+          padding: 20px 18px 14px 18px;
+        }
+        #chat-display {
+          min-height: 120px;
+          max-height: 220px;
+          overflow-y: auto;
+          border-radius: 8px;
+          background: #f7f8fa;
+          padding: 12px;
+          margin-bottom: 14px;
+          font-size: 15px;
+          color: #262626;
+        }
+        #chat-input-area {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        #chat-input {
+          resize: none;
+          border: 1px solid #e4e6eb;
+          border-radius: 8px;
+          padding: 10px 12px;
+          font-size: 15px;
+          background: #f7f8fa;
+          color: #262626;
+          outline: none;
+          transition: border 0.2s;
+        }
+        #chat-input:focus {
+          border: 1.5px solid #a0a7b8;
+        }
+        #chat-controls {
+          display: flex;
+          gap: 8px;
+          justify-content: flex-end;
+        }
+        #send-btn, #simplify-btn {
+          background: #262626;
+          color: #fff;
+          border: none;
+          border-radius: 7px;
+          padding: 7px 18px;
+          font-size: 14px;
+          font-weight: 500;
+          cursor: pointer;
+          transition: background 0.18s;
+        }
+        #send-btn:hover, #simplify-btn:hover {
+          background: #1a1a1a;
+        }
+        a#api-text {
+          display: inline-block;
+          margin: 0 10px 10px 0;
+          font-size: 13px;
+          color: #57606a;
+          text-decoration: none;
+          border-radius: 6px;
+          padding: 6px 12px;
+          background: #f2f3f5;
+          transition: background 0.18s, color 0.18s;
+        }
+        a#api-text:hover {
+          background: #e4e6eb;
+          color: #262626;
+        }
+      </style>
+</head>
+<body>
+      <div id="chatbot-container">
+            <div id="chat-display"></div>
+            <div id="chat-input-area">
+              <textarea id="chat-input" rows="2" placeholder="Type your message..."></textarea>
+              <div id="chat-controls">
+                <button id="send-btn">Send</button>
+                <button id="simplify-btn">Simplify</button>
+              </div>
+            </div>
+      </div>
+          
+      <a id="api-text" href="options.html" >Manage Api</a>
+      <a id="api-text" href="settings.html" >Settings</a>
+      <script src="popup.js"></script>
+</body>
+</html>
