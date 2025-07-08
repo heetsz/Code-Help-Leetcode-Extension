@@ -95,6 +95,6 @@ MIT License — Free to use and modify.
 
 ## 🙋‍♂️ Created by
 
-**Heet Shah** – [@heetgfh](https://github.com/heetgfh)  
+**Heet Shah** – [@heetsz](https://github.com/heetsz)  
 _For support or feedback, feel free to open an issue or reach out._
 
