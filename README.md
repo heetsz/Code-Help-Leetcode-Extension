@@ -27,13 +27,6 @@ LeetCode Helper is a smart Chrome extension designed to enhance your problem-sol
 
 ---
 
-## 📸 Demo
-
-> _[Add screenshot or screen recording here]_  
-> _(e.g., chatbot popping up on a LeetCode problem page)_
-
----
-
 ## 🧩 Installation
 
 1. Clone or download this repository.
